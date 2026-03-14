@@ -1,5 +1,7 @@
 {
     "progress_categories": {
+        "game": "Game Code",
+        "engine": "Engine Code",
         "sdk": "XDK Code"
     },
     "asflags": [],
@@ -8,7 +10,13 @@
         "base": {
             "flags": [
                 "/nologo",
-                "/c"
+                "/wd4355",
+                "/wd4164",
+                "/c",
+                "/GR",
+                "/O1",
+                "/Oi",
+                "/EHsc"
             ]
         }
     }

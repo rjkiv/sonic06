@@ -1,3 +1,10 @@
 {
-
+    "main": {
+        "progress_category": "game",
+        "mw_version": "X360/16.00.11886.00",
+        "cflags": "base",
+        "objects": {
+            "Main.cpp": "NonMatching"
+        }
+    }
 }
