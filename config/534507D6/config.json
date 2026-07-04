@@ -2,7 +2,8 @@
     "progress_categories": {
         "game": "Game Code",
         "engine": "Engine Code",
-        "sdk": "XDK Code"
+        "sdk": "XDK Code",
+        "lua": "Lua Code"
     },
     "asflags": [],
     "ldflags": [],
@@ -17,6 +18,24 @@
                 "/O1",
                 "/Oi",
                 "/EHsc"
+            ]
+        },
+        "lua": {
+            "flags": [
+                "/nologo",
+                "/wd4355",
+                "/wd4164",
+                "/c",
+                "/GR",
+                "/O1",
+                "/Oi",
+                "/EHsc",
+                "/I src/",
+                "/I src/lua-5.0/include/",
+                "/I src/system/stlport/",
+                "/I src/xdk/",
+                "/I src/xdk/LIBCMT/",
+                "-DBUFSIZ=512"
             ]
         }
     }

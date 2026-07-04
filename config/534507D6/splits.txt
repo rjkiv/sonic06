@@ -17,3 +17,95 @@ Sections:
 Main.cpp:
 	.pdata      start:0x82129740 end:0x82129748
 	.text       start:0x8238BFD0 end:0x8238C248
+
+lua-5.0/src/lapi.c:
+	.rdata      start:0x82048D20 end:0x82048DC4
+	.pdata      start:0x821394C8 end:0x82139610
+	.text       start:0x825D4F40 end:0x825D62F8
+
+lua-5.0/src/lib/lauxlib.c:
+	.pdata      start:0x82139610 end:0x821396F0
+	.text       start:0x825D62F8 end:0x825D7398
+
+lua-5.0/src/lib/ltablib.c:
+	.rdata      start:0x82048EB8 end:0x82048F48
+	.pdata      start:0x821396F0 end:0x82139748
+	.text       start:0x825D7398 end:0x825D7D50
+
+lua-5.0/src/lib/lbaselib.c:
+	.pdata      start:0x82139748 end:0x82139868
+	.text       start:0x825D7D50 end:0x825D96E0
+
+lua-5.0/src/ldo.c:
+	.pdata      start:0x82139868 end:0x821398F0
+	.text       start:0x825D96E0 end:0x825DA628
+
+lua-5.0/src/lstate.c:
+	.rdata      start:0x820494A0 end:0x820494B4
+	.pdata      start:0x821398F0 end:0x82139928
+	.text       start:0x825DA628 end:0x825DAC10
+
+lua-5.0/src/lib/lmathlib.c:
+	.pdata      start:0x82139928 end:0x821399F0
+	.text       start:0x825DAC10 end:0x825DB540
+
+lua-5.0/src/lgc.c:
+	.pdata      start:0x821399F0 end:0x82139A48
+	.text       start:0x825DB540 end:0x825DC368
+
+lua-5.0/src/ltm.c:
+	.rdata      start:0x8204974C end:0x8204983C
+	.pdata      start:0x82139A48 end:0x82139A58
+	.text       start:0x825DC368 end:0x825DC498
+
+lua-5.0/src/lvm.c:
+	.pdata      start:0x82139A58 end:0x82139AE0
+	.text       start:0x825DC498 end:0x825DE100
+
+lua-5.0/src/lobject.c:
+	.pdata      start:0x82139AE0 end:0x82139B08
+	.text       start:0x825DE100 end:0x825DE770
+
+lua-5.0/src/lstring.c:
+	.pdata      start:0x82139B08 end:0x82139B20
+	.text       start:0x825DE770 end:0x825DEA70
+
+lua-5.0/src/lfunc.c:
+	.pdata      start:0x82139B20 end:0x82139B50
+	.text       start:0x825DEA70 end:0x825DEE60
+
+lua-5.0/src/ltable.c:
+	.rdata      start:0x82049A90 end:0x82049AE0
+	.pdata      start:0x82139B50 end:0x82139BA0
+	.text       start:0x825DEE60 end:0x825DFB60
+
+lua-5.0/src/lzio.c:
+	.pdata      start:0x82139BA0 end:0x82139BC0
+	.text       start:0x825DFB60 end:0x825DFD70
+
+lua-5.0/src/ldebug.c:
+	.pdata      start:0x82139BC0 end:0x82139C08
+	.text       start:0x825DFD70 end:0x825E0B18
+
+lua-5.0/src/lmem.c:
+	.rdata      start:0x82049C24 end:0x82049C4C
+	.pdata      start:0x82139C08 end:0x82139C18
+	.text       start:0x825E0BC8 end:0x825E0D10
+
+lua-5.0/src/lparser.c:
+	.pdata      start:0x82139C18 end:0x82139D48
+	.text       start:0x825E0D10 end:0x825E3480
+
+lua-5.0/src/lundump.c:
+	.rdata      start:0x82049E50 end:0x82049FF4
+	.pdata      start:0x82139D48 end:0x82139D90
+	.text       start:0x825E3480 end:0x825E3E00
+
+lua-5.0/src/llex.c:
+	.pdata      start:0x82139D90 end:0x82139DE0
+	.text       start:0x825E3E00 end:0x825E5398
+
+lua-5.0/src/lcode.c:
+	.rdata      start:0x8204A224 end:0x8204A290
+	.pdata      start:0x82139DE0 end:0x82139EB0
+	.text       start:0x825E5398 end:0x825E6C30

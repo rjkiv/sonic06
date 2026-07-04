@@ -1,10 +1,38 @@
 {
     "main": {
         "progress_category": "game",
-        "mw_version": "X360/16.00.11886.00",
+        "mw_version": "X360/14.00.2110",
         "cflags": "base",
         "objects": {
             "Main.cpp": "NonMatching"
+        }
+    },
+    "lua": {
+        "progress_category": "lua",
+        "mw_version": "X360/14.00.2110",
+        "cflags": "lua",
+        "objects": {
+            "lua-5.0/src/lapi.c": "Matching",
+            "lua-5.0/src/lib/lauxlib.c": "NonMatching",
+            "lua-5.0/src/lib/ltablib.c": "NonMatching",
+            "lua-5.0/src/lib/lbaselib.c": "NonMatching",
+            "lua-5.0/src/ldo.c": "NonMatching",
+            "lua-5.0/src/lstate.c": "Matching",
+            "lua-5.0/src/lib/lmathlib.c": "NonMatching",
+            "lua-5.0/src/lgc.c": "Matching",
+            "lua-5.0/src/ltm.c": "Matching",
+            "lua-5.0/src/lvm.c": "NonMatching",
+            "lua-5.0/src/lobject.c": "NonMatching",
+            "lua-5.0/src/lstring.c": "Matching",
+            "lua-5.0/src/lfunc.c": "Matching",
+            "lua-5.0/src/ltable.c": "Matching",
+            "lua-5.0/src/lzio.c": "Matching",
+            "lua-5.0/src/ldebug.c": "NonMatching",
+            "lua-5.0/src/lmem.c": "Matching",
+            "lua-5.0/src/lparser.c": "NonMatching",
+            "lua-5.0/src/lundump.c": "Matching",
+            "lua-5.0/src/llex.c": "NonMatching",
+            "lua-5.0/src/lcode.c": "Matching"
         }
     }
 }
