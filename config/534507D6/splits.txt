@@ -11,6 +11,8 @@ Sections:
 	.embsec6    type:code align:65536
 	.data       type:data align:65536
 	.idata      type:data align:65536
+	.XBLD       type:data align:65536
+	.reloc      type:data align:65536
 
 Main.cpp:
 	.pdata      start:0x82129740 end:0x82129748
