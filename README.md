@@ -39,7 +39,7 @@ Features
 - No manual assembly: decomp-toolkit handles splitting the XEX into relocatable objects based on the configuration. No game assets are committed to the repository.
 - Integration with [objdiff](https://github.com/encounter/objdiff) for a diffing workflow.
 
-COMING SOON(TM):
+COMING SOON<sup>TM</sup>:
 - Progress calculation and integration with [decomp.dev](https://decomp.dev).
 - CI workflow template for GitHub Actions.
 
