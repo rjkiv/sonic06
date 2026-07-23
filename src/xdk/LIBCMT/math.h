@@ -57,6 +57,7 @@ int __fpclassifyd(double);
 
 // intrinsic assumed from how lua uses it
 #define sqrt __fsqrt
+#define sqrtf __fsqrts
 
 #define MATH_ERRNO 1
 #define MATH_ERREXCEPT 2
@@ -70,54 +71,55 @@ int __fpclassifyd(double);
 #define FP_ILOGBNAN
 */
 
-// #define _DECL_MATH(name)                                                                 \
-//     double name(double x);                                                               \
-//     inline float name##f(float x) { return name(x); }                                    \
-//     inline long double name##l(long double x) { return name(x); }
+#define _DECL_MATH(name)                                                       \
+	double name(double x);                                                     \
+	INLINE float name##f(float x) { return name(x); }                          \
+	INLINE long double name##l(long double x) { return name(x); }
 
-#define _DECL_MATH(name)                                                                 \
-    double name(double x);                                                               \
-    INLINE float name##f(float x) { return name(x); }                                    \
-    INLINE long double name##l(long double x) { return name(x); }
+#define _DECL_MATHC(name, argtype, arg)                                        \
+	double name(argtype arg);                                                  \
+	INLINE float name##f(argtype arg) { return name(arg); }                    \
+	INLINE long double name##l(argtype arg) { return name(arg); }
 
-#define _DECL_MATHC(name, argtype, arg)                                                  \
-    double name(argtype arg);                                                            \
-    INLINE float name##f(argtype arg) { return name(arg); }                              \
-    INLINE long double name##l(argtype arg) { return name(arg); }
+#define _DECL_MATHR(name, ret)                                                 \
+	ret name(double x);                                                        \
+	INLINE ret name##f(float x) { return name(x); }                            \
+	INLINE ret name##l(long double x) { return name(x); }
 
-#define _DECL_MATHR(name, ret)                                                           \
-    ret name(double x);                                                                  \
-    INLINE ret name##f(float x) { return name(x); }                                      \
-    INLINE ret name##l(long double x) { return name(x); }
+#define _DECL_MATH2(name)                                                      \
+	double name(double x, double y);                                           \
+	INLINE float name##f(float x, float y) { return name(x, y); }              \
+	INLINE long double name##l(long double x, long double y) {                 \
+		return name(x, y);                                                     \
+	}
 
-#define _DECL_MATH2(name)                                                                \
-    double name(double x, double y);                                                     \
-    INLINE float name##f(float x, float y) { return name(x, y); }                        \
-    INLINE long double name##l(long double x, long double y) { return name(x, y); }
+#define _DECL_MATH2C(name, arg2type, arg2)                                     \
+	double name(double x, arg2type arg2);                                      \
+	INLINE float name##f(float x, arg2type arg2) { return name(x, arg2); }     \
+	INLINE long double name##l(long double x, arg2type arg2) {                 \
+		return name(x, arg2);                                                  \
+	}
 
-#define _DECL_MATH2C(name, arg2type, arg2)                                               \
-    double name(double x, arg2type arg2);                                                \
-    INLINE float name##f(float x, arg2type arg2) { return name(x, arg2); }               \
-    INLINE long double name##l(long double x, arg2type arg2) { return name(x, arg2); }
+#define _DECL_MATH2P(name, arg2name)                                           \
+	double name(double x, double *arg2name);                                   \
+	float name##f(float x, float *arg2name);                                   \
+	long double name##l(long double x, long double *arg2name);
 
-#define _DECL_MATH2P(name, arg2name)                                                     \
-    double name(double x, double *arg2name);                                             \
-    float name##f(float x, float *arg2name);                                             \
-    long double name##l(long double x, long double *arg2name);
+#define _DECL_MATH3(name)                                                      \
+	double name(double x, double y, double z);                                 \
+	INLINE float name##f(float x, float y, float z) { return name(x, y, z); }  \
+	INLINE long double name##l(long double x, long double y, long double z) {  \
+		return name(x, y, z);                                                  \
+	}
 
-#define _DECL_MATH3(name)                                                                \
-    double name(double x, double y, double z);                                           \
-    INLINE float name##f(float x, float y, float z) { return name(x, y, z); }            \
-    INLINE long double name##l(long double x, long double y, long double z) {            \
-        return name(x, y, z);                                                            \
-    }
-
-#define _DECL_MATH3C(name, arg3type, arg3)                                               \
-    double name(double x, double y, arg3type arg3);                                      \
-    INLINE float name##f(float x, float y, arg3type arg3) { return name(x, y, arg3); }   \
-    INLINE long double name##l(long double x, long double y, arg3type arg3) {            \
-        return name(x, y, arg3);                                                         \
-    }
+#define _DECL_MATH3C(name, arg3type, arg3)                                     \
+	double name(double x, double y, arg3type arg3);                            \
+	INLINE float name##f(float x, float y, arg3type arg3) {                    \
+		return name(x, y, arg3);                                               \
+	}                                                                          \
+	INLINE long double name##l(long double x, long double y, arg3type arg3) {  \
+		return name(x, y, arg3);                                               \
+	}
 
 _DECL_MATH(fabs);
 _DECL_MATH2(fmod);
@@ -139,7 +141,9 @@ _DECL_MATH(log2);
 _DECL_MATH(log1p);
 
 _DECL_MATH2(pow);
-_DECL_MATH(sqrt);
+// _DECL_MATH(sqrt); // overriden by intrins
+double __fsqrt(double x);
+float __fsqrts(float x);
 _DECL_MATH(cbrt);
 _DECL_MATH2(hypot);
 

@@ -14,6 +14,8 @@
 #define DECLSPEC(x) __declspec(x)
 
 #define TLS __declspec(thread)
+#define ALIGN(x) __declspec(align(x))
+#define INTRIN __declspec(intrin_type)
 #else
 #define CDECL
 #define STDCALL
@@ -28,6 +30,8 @@
 #define DECLSPEC(x)
 
 #define TLS thread_local
+#define ALIGN(x) alignas(x)
+#define INTRIN
 #endif
 
 #define ROTATE_LEFT(x, i) (((x) << (i)) | ((x) >> ((sizeof((x)) * 8) - (i))))
@@ -43,7 +47,7 @@
 #define RELEASE(x) (delete x, x = null)
 #define RELEASEARRAY(x) (delete[] (ubyte *)x, x = null)
 
-#define ADDSTACK(x)                                                                      \
-    do {                                                                                 \
-        u8 _stackpad[x];                                                                 \
-    } while (0);
+#define ADDSTACK(x)                                                            \
+	do {                                                                       \
+		u8 _stackpad[x];                                                       \
+	} while (0);

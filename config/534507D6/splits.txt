@@ -23,9 +23,29 @@ xdk/d3d9/debug.cpp:
 	.pdata      start:0x82135C30 end:0x82135C60
 	.text       start:0x82540A28 end:0x82541120
 
+xdk/d3d9/pix.cpp:
+	.pdata      start:0x82135F90 end:0x82135FC8
+	.text       start:0x8254C168 end:0x8254CDE8
+
+SoX/IResource.cpp:
+	.pdata      start:0x82136E08 end:0x82136E28
+	.text       start:0x82581E70 end:0x82582148
+
 SoX/Scenery/Light.cpp:
 	.pdata      start:0x82137C78 end:0x82137CA0
 	.text       start:0x8259D200 end:0x8259D560
+
+SoX/platforms/Xenon/FileSystemXenon.cpp:
+	.pdata      start:0x821382F0 end:0x821382F8
+	.text       start:0x825B0450 end:0x825B04A0
+
+SoX/Graphics/ShaderCommon.cpp:
+	.pdata      start:0x82138BD8 end:0x82138BF8
+	.text       start:0x825C5118 end:0x825C5320
+
+SoX/Math/Vector.cpp:
+	.pdata      start:0x82139360 end:0x82139470
+	.text       start:0x825D2200 end:0x825D4510
 
 lua-5.0/src/lapi.c:
 	.rdata      start:0x82048D18 end:0x82048DC4
@@ -119,6 +139,6 @@ lua-5.0/src/lcode.c:
 	.pdata      start:0x82139DE0 end:0x82139EB0
 	.text       start:0x825E5398 end:0x825E6C30
 
-SoX/platforms/xenon/AtgFont.cpp:
+SoX/platforms/Xenon/AtgFont.cpp:
 	.pdata      start:0x82147A08 end:0x82147A10
 	.text       start:0x828BDAC0 end:0x828BDC08
