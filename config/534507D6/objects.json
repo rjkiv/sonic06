@@ -18,6 +18,7 @@
                     "/Ob0"
                 ]
             },
+            "SoX/IResource.cpp": "NonMatching",
             "SoX/Math/Vector.cpp": "NonMatching",
             "SoX/platforms/Xenon/AtgFont.cpp": "NonMatching",
             "SoX/platforms/Xenon/FileSystemXenon.cpp": "NonMatching",
