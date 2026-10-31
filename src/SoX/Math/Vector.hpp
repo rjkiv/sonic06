@@ -36,7 +36,7 @@ struct Vector3 {
 struct Vector {
 	XMVECTOR v;
 
-	Vector() {}
+	Vector();
 	Vector(XMVECTOR xyzw) { v = xyzw; }
 	Vector(const Vector3 &xyz, float w);
 
