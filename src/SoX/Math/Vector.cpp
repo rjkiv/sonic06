@@ -44,6 +44,8 @@ Vector::Vector(const Vector3 &xyz, float w) {
 	v.w = w;
 }
 
+Vector::Vector() { v.x = v.y = v.z = v.w = 0; }
+
 const Vector &Vector::operator*=(float f) {
 	XMVECTOR splat;
 	splat.v[0] = f;
@@ -59,6 +61,14 @@ Vector Vector::operator*(float f) const {
 	v = __lvlx(&v.v[0], 0);
 	v = __vspltw(v, 0);
 	return __vmulfp(*this, v);
+}
+
+// these may be Matrix::at(row, col) or smth but
+// this garbage will have to do for now, go, my IDA output
+int fn_825D25A8(int a1, int a2, int a3) { return 4 * (4 * a3 + a2) + a1; }
+
+double fn_825D25C0(int a1, int a2, int a3) {
+	return *(float *)(4 * (4 * a3 + a2) + a1);
 }
 
 // i thiiink this is translate
@@ -152,6 +162,21 @@ Vector2 Vector2::operator-(const Vector2 &rhs) const {
 Vector2 Vector2::operator*(float f) const { return Vector2(x * f, y * f); }
 
 float Vector2::Length() const { return sqrtf(Dot(*this)); }
+
+// seems like Vector4i but every implementation I've tried doesn't match...
+// somehow it's fine when it's a Matrix specifically but this
+// looks like a total hack and I hate it
+Matrix fn_825D42A8(int arg) {
+	Matrix m;
+
+	int *p = (int *)(&m);
+	p[0] = arg;
+	p[1] = arg ^ 0x3CC19185;
+	p[2] = arg ^ 0x01C9C2D0;
+	p[3] = arg ^ 0x2E43C13E;
+
+	return m;
+}
 
 Matrix fn_825D4440() {
 	Vector zero = __vspltisw(0);
